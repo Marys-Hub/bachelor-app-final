@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: backend
+  datasource:
+    password: password
+    url: jdbc:postgresql://localhost:5432/database
+    username: username
+  ai:
+    ollama:
+      chat:
+        options:
+          model: phi3:3.8b
+#  ai:
+#    openai:
+#      api-key: sk-svcacct-xgoMM56QqYTdn0kcH46aT3BlbkFJJ5dEMVrwoNjH2IgkGIfA
+#      chat:
+#        options:
+#          model: gpt-3.5-turbo
+#          temperature: 0.7
+
+  jpa:
+    hibernate:
+      #      Orice modificare intr-o clasa anotata cu @Entity este automat procesata in DB.
+      #      EXCEPTIE: daca stergi ceva, trebuie sa o faci manual in DB.
+      ddl-auto: update
+    show-sql: true
+  security:
+    user:
+      name: username
+      password: password
+  sql:
+    init:
+      mode: ALWAYS
+
+  mail:
+    host: localhost
+    port: 1025
+
+  threads:
+    virtual:
+      enabled: true

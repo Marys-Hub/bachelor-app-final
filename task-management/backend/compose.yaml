@@ -1,0 +1,14 @@
+services:
+  mail:
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+  postgres:
+    image: postgres:latest
+    environment:
+      - 'POSTGRES_DB=database'
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_USER=username'
+    ports:
+      - 5432:5432
